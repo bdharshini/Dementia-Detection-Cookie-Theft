@@ -1,42 +1,83 @@
-🧠 Dementia Detection using Cookie Theft Dataset
-This project focuses on detecting early signs of dementia, particularly Alzheimer's disease, by analyzing speech descriptions of the "Cookie Theft" picture—a widely used diagnostic tool in cognitive assessments
+# 🧠 Dementia Detection Using the Cookie Theft Dataset
 
-📊 Dataset
-Source: Hugging Face - MearaHe/dementiabank
+Detecting early signs of dementia, especially Alzheimer’s disease, through **language-based analysis** of patient speech describing a visual scene—the Cookie Theft image.
 
-Description:
-The dataset contains 498 samples with 3 columns. Each sample includes a patient's speech transcription describing the Cookie Theft image. Based on the description, each subject is labeled as either having dementia or being cognitively healthy.
+---
 
-Challenge:
-The relatively small dataset size poses a limitation to the model’s generalization capabilities.
+## 🖼️ The Cookie Theft Picture
 
-Balance:
-The dataset is balanced across classes, so accuracy is used as the primary evaluation metric.
+Participants are asked to describe the image below. Their spoken descriptions are recorded and analyzed to assess signs of cognitive decline.
 
-🧪 Models and Results
-The following models were trained using TF-IDF vectorized speech text:
+<p align="center">
+  <img src="images/cookie_theft.jpg" alt="Cookie Theft Image" width="400"/>
+</p>
 
-Model	Accuracy
-Support Vector Classifier (SVC)	0.88
-Logistic Regression	0.82
-XGBoost	0.80
-Decision Tree (Gini)	0.71
-Decision Tree (Entropy)	0.67
+---
 
-👉 SVC was selected as the final model for prediction due to its superior performance.
+## 📚 Dataset Overview
 
-🔊 Real-Time Prediction Pipeline
-Audio Input: User records their speech describing the Cookie Theft image.
+* **Source**: [Hugging Face – MearaHe/dementiabank](https://huggingface.co/datasets/MearaHe/dementiabank)
+* **Samples**: 498
+* **Columns**: 3
+* **Labels**: `Dementia` / `Healthy`
+* **Balance**: The dataset is **balanced**, so **accuracy** is used as the evaluation metric.
+* **Limitation**: The dataset is relatively small, which may affect the generalization of ML models.
 
-Speech-to-Text: The audio is transcribed into text using a speech recognition library.
+### 📊 Class Distribution
 
-Preprocessing & Encoding: The text is cleaned and transformed using TF-IDF vectorization.
+<p align="center">
+  <img src="images/class_distribution.png" alt="Class Distribution" width="400"/>
+</p>
 
-Prediction: The pre-trained SVC model classifies the sample as either "Dementia" or "Healthy".
+---
 
-🚧 Limitations & Future Work
-Dataset Size: The limited number of samples restricts the model's potential.
+## 🤖 Model Training & Evaluation
 
-Modalities: Currently, only transcribed text is used. Future work can integrate acoustic features from the audio.
+All models were trained on **TF-IDF vectorized** transcriptions of the participants' descriptions.
 
-UI/UX: Future versions may include a user-friendly interface for clinical or self-screening use.
+| Model                               | Accuracy |
+| ----------------------------------- | -------- |
+| **SVC (Support Vector Classifier)** | **0.88** |
+| Logistic Regression                 | 0.82     |
+| XGBoost                             | 0.80     |
+| Decision Tree (Gini)                | 0.71     |
+| Decision Tree (Entropy)             | 0.67     |
+
+> ✅ **SVC** was selected as the final model due to its superior performance.
+
+### 📈 Model Accuracy Comparison
+
+<p align="center">
+  <img src="images/model_accuracies.png" alt="Model Accuracy Chart" width="500"/>
+</p>
+
+---
+
+## 🔄 End-to-End Prediction Pipeline
+
+1. **🗣️ Audio Input**
+   User describes the Cookie Theft image.
+
+2. **📝 Speech-to-Text**
+   Audio is transcribed into text using a speech recognition module.
+
+3. **🧼 Text Preprocessing**
+   Text is cleaned and transformed using **TF-IDF vectorization**.
+
+4. **📊 Prediction**
+   The trained **SVC model** predicts whether the speech indicates signs of dementia.
+
+---
+
+## 🚧 Limitations & Future Work
+
+* **Small Dataset**: Limits generalization to larger populations.
+* **Text Only**: Currently, only text features are used.
+
+Future improvements may include:
+
+* Integration of **acoustic features** (e.g., pitch, pauses).
+* Development of a **UI**.
+* Expansion using **multimodal data** (audio + text).
+
+---
