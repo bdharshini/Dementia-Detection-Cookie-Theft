@@ -9,7 +9,7 @@ Detecting early signs of dementia, especially Alzheimer’s disease, through **l
 Participants are asked to describe the image below. Their spoken descriptions are recorded and analyzed to assess signs of cognitive decline.
 
 <p align="center">
-  <img src="images/cookie_theft.jpg" alt="Cookie Theft Image" width="400"/>
+  <img src="cookie_theft.jpg" alt="Cookie Theft Image" width="400"/>
 </p>
 
 ---
@@ -26,7 +26,7 @@ Participants are asked to describe the image below. Their spoken descriptions ar
 ### 📊 Class Distribution
 
 <p align="center">
-  <img src="images/class_distribution.png" alt="Class Distribution" width="400"/>
+  <img src="class_distribution.png" alt="Class Distribution" width="400"/>
 </p>
 
 ---
@@ -48,7 +48,7 @@ All models were trained on **TF-IDF vectorized** transcriptions of the participa
 ### 📈 Model Accuracy Comparison
 
 <p align="center">
-  <img src="images/model_accuracies.png" alt="Model Accuracy Chart" width="500"/>
+  <img src="model_accuracies.png" alt="Model Accuracy Chart" width="500"/>
 </p>
 
 ---
